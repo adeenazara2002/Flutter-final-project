@@ -63,7 +63,18 @@ class _ArtBoardState extends State<ArtBoard> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 50,
+                      height: 10,
+                    ),
+
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 160)),
+                        Image.asset('assets/images/slider.png')
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 30,
                     ),
                     Row(
                       children: [

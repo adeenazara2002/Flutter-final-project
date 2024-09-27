@@ -18,7 +18,7 @@ class _OnBoardState extends State<OnBoard> {
         child: Column(
           children: [
             SizedBox(
-              height: 50,
+              height: 60,
             ),
             Row(
               children: [
@@ -96,11 +96,11 @@ class _OnBoardState extends State<OnBoard> {
                 clipBehavior: Clip.none, // Allow overflow for overlap
                 children: [
                   Row(
-              children: [
-                Padding(padding: EdgeInsets.only(left: 260)),
-                Image.asset('assets/images/purpleBall.png'),
-              ],
-            ),
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 260)),
+                      Image.asset('assets/images/purpleBall.png'),
+                    ],
+                  ),
                   // CircleAvatar (red head)
                   Positioned(
                     top: 0, // Place red head at the base
@@ -154,7 +154,7 @@ class _OnBoardState extends State<OnBoard> {
             ),
 
             SizedBox(
-              height: 50, // Height of the stack
+              height: 40, // Height of the stack
               child: Stack(
                 clipBehavior: Clip.none, // Allow overflow for overlap
                 children: [
@@ -170,7 +170,8 @@ class _OnBoardState extends State<OnBoard> {
                   // Grey Container overlapping the top right of redhead image
                   Positioned(
                     top: -20, // Adjust overlap to make container appear higher
-                    left: 100, // Adjust positioning to overlap the redhead image
+                    left:
+                        100, // Adjust positioning to overlap the redhead image
                     child: Container(
                       height: 60,
                       width: 180,
@@ -209,7 +210,7 @@ class _OnBoardState extends State<OnBoard> {
                 ],
               ),
             ),
-            
+
             SizedBox(
               height: 5,
             ),
@@ -251,6 +252,86 @@ class _OnBoardState extends State<OnBoard> {
                 Image.asset('assets/images/pinkBall.png'),
               ],
             ),
+
+            // texts start
+            SizedBox(
+              height: 5,
+            ),
+            Row(
+              children: [
+                Padding(padding: EdgeInsets.only(left: 30)),
+                Text(
+                  'Task Management',
+                  style: TextStyle(
+                      color: Color.fromRGBO(117, 110, 243, 1),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Padding(padding: EdgeInsets.only(left: 30)),
+                Text(
+                  'Work more',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 35,
+                      fontWeight: FontWeight.w400),
+                ),
+              ],
+            ),
+
+            Row(
+              children: [
+                Padding(padding: EdgeInsets.only(left: 30)),
+                Text(
+                  'Structured',
+                  style: TextStyle(
+                      color: Color.fromRGBO(117, 110, 243, 1),
+                      fontSize: 35,
+                      fontWeight: FontWeight.w600),
+                ),
+                Padding(padding: EdgeInsets.only(left: 10)),
+                Text(
+                  'and',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 35,
+                      fontWeight: FontWeight.w400),
+                ),
+              ],
+            ),
+
+            Row(
+              children: [
+                Padding(padding: EdgeInsets.only(left: 30)),
+                Text(
+                  'Oragnized',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 35,
+                      fontWeight: FontWeight.w400),
+                ),
+              ],
+            ),
+SizedBox(height: 5,),
+            Row(
+              children: [
+                Padding(padding: EdgeInsets.only(left: 30)),
+
+                Image.asset('assets/images/Sliedbar.png'),
+              ],
+            ),
+      
+            Row(
+              children: [
+                Padding(padding: EdgeInsets.only(left: 200)),
+
+                Text('Skip'),
+                Image.asset('assets/images/rectangle.png')
+              ],
+            )
           ],
         ),
       ),

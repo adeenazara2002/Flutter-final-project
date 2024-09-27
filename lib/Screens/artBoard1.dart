@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfinalproject/Screens/onBoard1.dart';
 
-class ArtBoard extends StatefulWidget {
+class ArtBoard extends StatelessWidget {
   const ArtBoard({super.key});
 
-  @override
-  State<ArtBoard> createState() => _ArtBoardState();
-}
-
-class _ArtBoardState extends State<ArtBoard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -156,7 +152,14 @@ class _ArtBoardState extends State<ArtBoard> {
                           left: 45,
                         )),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => OnBoard(),
+                                  ),
+                                );
+                          },
                           style: ElevatedButton.styleFrom(
                             elevation: 10,
                             shadowColor: Color.fromRGBO(139, 120, 255, 1)

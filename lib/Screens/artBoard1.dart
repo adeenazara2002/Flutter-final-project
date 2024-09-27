@@ -19,7 +19,11 @@ class _ArtBoardState extends State<ArtBoard> {
           SingleChildScrollView(
             child: Column(
               children: [
-                
+                Row(
+                  children: [
+                    Image.asset('assets/images/logo.png')
+                  ],
+                )
               ],
             ),
           )),

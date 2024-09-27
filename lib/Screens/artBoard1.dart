@@ -18,50 +18,108 @@ class _ArtBoardState extends State<ArtBoard> {
         child: Stack(
           children: [
             Image.asset(
-              'assets/images/logo.png', // Logo image
+              'assets/images/logo.png',
               fit: BoxFit.cover,
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.6, // Adjust height if needed
+              height: MediaQuery.of(context).size.height * 0.6,
             ),
-            // Vector image on top left corner
             Positioned(
-              top: 20, // Adjust the top position as needed
-              left: 20, // Adjust the left position as needed
+              top: 30,
+              left: 20,
               child: Image.asset(
-                'assets/images/vector.png', // Replace with your vector image path
-                width: 60, // Set your desired width
-                height: 60, // Set your desired height
+                'assets/images/vector.png',
+                width: 60,
+                height: 60,
               ),
             ),
-            // Container that appears over the image
             Positioned(
-              bottom: 0, 
-              left: 0, 
-              right: 0, 
+              bottom: 0,
+              left: 0,
+              right: 0,
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.3, 
+                height: MediaQuery.of(context).size.height * 0.3,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)), 
-                  color: Colors.white, 
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                  color: Colors.white,
                   border: Border.all(
                     color: Colors.white,
                   ),
                 ),
               ),
             ),
-            // Overlapping container with slight offset
             Positioned(
-              bottom: 0, 
+              bottom: 0,
               left: 0,
               right: 0,
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.5, 
+                height: MediaQuery.of(context).size.height * 0.5,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)), 
-                  color: Colors.white, 
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                  color: Colors.white,
                   border: Border.all(
                     color: Colors.white,
                   ),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 60,
+                    ),
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 80)),
+                        Image.asset('assets/images/Taskcy.png')
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 60)),
+                        Text(
+                          'Building Better', style: 
+                          TextStyle(
+                            color: Colors.black,
+                            fontSize: 37,
+                            fontWeight: FontWeight.w700
+                          ),
+                          
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 80)),
+                        Image.asset('assets/images/Taskcy.png')
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 80)),
+                        Image.asset('assets/images/Taskcy.png')
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 80)),
+                        Image.asset('assets/images/Taskcy.png')
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),

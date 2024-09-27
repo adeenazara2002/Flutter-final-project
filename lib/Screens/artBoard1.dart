@@ -63,7 +63,7 @@ class _ArtBoardState extends State<ArtBoard> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 60,
+                      height: 50,
                     ),
                     Row(
                       children: [
@@ -135,49 +135,53 @@ class _ArtBoardState extends State<ArtBoard> {
                         ),
                       ],
                     ),
-
+                    SizedBox(
+                      height: 15,
+                    ),
                     Row(
                       children: [
+                        Padding(
+                            padding: EdgeInsets.only(
+                          left: 45,
+                        )),
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            elevation:
-                                0, // Remove elevation to prevent grey background
-                            shadowColor: Colors
-                                .transparent, // Disable shadow color to prevent grey area
-                            foregroundColor: Colors.white, // Text color
+                            elevation: 10,
+                            shadowColor: Color.fromRGBO(139, 120, 255, 1)
+                                .withOpacity(0.8),
+                            foregroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
+                              borderRadius: BorderRadius.circular(18.0),
                             ),
-                            padding: EdgeInsets
-                                .zero, // Remove padding from the button to prevent overflow
+                            padding: EdgeInsets.zero,
                           ),
                           child: Ink(
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
-                                  Color.fromRGBO(255, 198, 48, 1),
-                                  Color.fromRGBO(255, 179, 57, 1),
+                                  Color.fromRGBO(139, 120, 255, 1),
+                                  Color.fromRGBO(84, 81, 214, 1),
                                 ],
                               ),
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Container(
                               constraints: BoxConstraints(
-                                maxWidth: 300.0, // Adjust the width as needed
-                                minHeight: 50.0, // Adjust the height as needed
+                                // maxWidth: 200.0,
+                                minHeight: 50.0,
                               ),
                               alignment: Alignment.center,
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 80.0,
-                                  vertical: 20.0,
+                                  vertical: 17.0,
                                 ),
                                 child: Text(
                                   'Get Started',
                                   style: TextStyle(
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
                               ),

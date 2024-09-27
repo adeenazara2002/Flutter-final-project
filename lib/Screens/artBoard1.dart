@@ -24,7 +24,7 @@ class _ArtBoardState extends State<ArtBoard> {
               height: MediaQuery.of(context).size.height * 0.6,
             ),
             Positioned(
-              top: 30,
+              top: 40,
               left: 20,
               child: Image.asset(
                 'assets/images/vector.png',
@@ -79,13 +79,27 @@ class _ArtBoardState extends State<ArtBoard> {
                       children: [
                         Padding(padding: EdgeInsets.only(left: 60)),
                         Text(
-                          'Building Better', style: 
-                          TextStyle(
-                            color: Colors.black,
-                            fontSize: 37,
-                            fontWeight: FontWeight.w700
-                          ),
-                          
+                          'Building Better',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 37,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ],
+                    ),
+
+                    // SizedBox(
+                    //   height: 10,
+                    // ),
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 90)),
+                        Text(
+                          'Workplaces',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 37,
+                              fontWeight: FontWeight.w700),
                         ),
                       ],
                     ),
@@ -95,30 +109,83 @@ class _ArtBoardState extends State<ArtBoard> {
                     ),
                     Row(
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 80)),
-                        Image.asset('assets/images/Taskcy.png')
+                        Padding(padding: EdgeInsets.only(left: 60)),
+                        Text(
+                          'Create a unique emotional story that',
+                          style: TextStyle(
+                              color: Color.fromRGBO(141, 141, 141, 1),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700),
+                        ),
                       ],
                     ),
 
                     SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     Row(
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 80)),
-                        Image.asset('assets/images/Taskcy.png')
+                        Padding(padding: EdgeInsets.only(left: 90)),
+                        Text(
+                          'describes better than words',
+                          style: TextStyle(
+                              color: Color.fromRGBO(141, 141, 141, 1),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700),
+                        ),
                       ],
                     ),
 
-                    SizedBox(
-                      height: 10,
-                    ),
                     Row(
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 80)),
-                        Image.asset('assets/images/Taskcy.png')
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation:
+                                0, // Remove elevation to prevent grey background
+                            shadowColor: Colors
+                                .transparent, // Disable shadow color to prevent grey area
+                            foregroundColor: Colors.white, // Text color
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            padding: EdgeInsets
+                                .zero, // Remove padding from the button to prevent overflow
+                          ),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Color.fromRGBO(255, 198, 48, 1),
+                                  Color.fromRGBO(255, 179, 57, 1),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: Container(
+                              constraints: BoxConstraints(
+                                maxWidth: 300.0, // Adjust the width as needed
+                                minHeight: 50.0, // Adjust the height as needed
+                              ),
+                              alignment: Alignment.center,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 80.0,
+                                  vertical: 20.0,
+                                ),
+                                child: Text(
+                                  'Get Started',
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
-                    ),
+                    )
                   ],
                 ),
               ),

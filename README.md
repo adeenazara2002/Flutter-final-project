@@ -1,4 +1,4 @@
-# flutterfinalproject
+# mygroupproject
 
 A new Flutter project.
 

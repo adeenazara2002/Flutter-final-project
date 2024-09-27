@@ -15,34 +15,48 @@ class _ArtBoardState extends State<ArtBoard> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         color: Colors.white,
-        child: Scrollbar(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    // Purple image at the bottom
-                    Image.asset(
-                      'assets/images/logo.png', // Replace with your purple image path
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width,
-                    ),
-                    // Vector image on top left corner
-                    Positioned(
-                      top: 20, // Adjust the top position as needed
-                      left: 20, // Adjust the left position as needed
-                      child: Image.asset(
-                        'assets/images/vector.png',
-                        width: 60, // Set your desired width
-                        height: 80, // Set your desired height
-                      ),
-                    ),
-                  ],
-                ),
-                
-              ],
+        child: Stack(
+          children: [
+            // Image at the bottom
+            Image.asset(
+              'assets/images/logo.png', // Replace with your image path
+              // fit: BoxFit.cover,
+              // width: MediaQuery.of(context).size.width,
+              // height: MediaQuery.of(context).size.height * 0.6, // Adjust height as needed
             ),
-          ),
+            // Container that appears over the image
+            Positioned(
+              bottom: 0, // Position at the bottom of the screen
+              left: 0, // Align left edge with the screen
+              right: 0, // Align right edge with the screen
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.3, // Adjust height as needed
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)), // Rounded top corners
+                  color: Colors.white, // Set background color
+                  border: Border.all(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            // Overlapping container with slight offset
+            Positioned(
+              bottom: 0, // Overlap by setting a slight positive value
+              left: 0,
+              right: 0,
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.5, // Same height as above
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)), // Rounded top corners
+                  color: Colors.black, // Set background color
+                  border: Border.all(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

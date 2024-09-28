@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfinalproject/Screens/onBoard2.dart';
 
 class OnBoard extends StatefulWidget {
   const OnBoard({super.key});
@@ -26,7 +27,6 @@ class _OnBoardState extends State<OnBoard> {
                 Image.asset('assets/images/yellowBall.png'),
               ],
             ),
-            
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
@@ -84,7 +84,6 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-
             SizedBox(
               height: 20,
             ),
@@ -100,14 +99,13 @@ class _OnBoardState extends State<OnBoard> {
                     ],
                   ),
                   Positioned(
-                    top: 0, 
-                    left: 20, 
+                    top: 0,
+                    left: 20,
                     child: CircleAvatar(
                       backgroundImage: AssetImage('assets/images/redHead.png'),
-                      radius: 40, 
+                      radius: 40,
                     ),
                   ),
-
                   Positioned(
                     top: -20,
                     left: 70,
@@ -149,23 +147,22 @@ class _OnBoardState extends State<OnBoard> {
                 ],
               ),
             ),
-
             SizedBox(
-              height: 40, 
+              height: 40,
               child: Stack(
                 clipBehavior: Clip.none, // Allow overflow for overlap
                 children: [
                   Positioned(
-                    top: 0, 
-                    left: 260, 
+                    top: 0,
+                    left: 260,
                     child: CircleAvatar(
                       backgroundImage: AssetImage('assets/images/uncle.png'),
-                      radius: 40, 
+                      radius: 40,
                     ),
                   ),
                   Positioned(
-                    top: -20, 
-                    left:  100, 
+                    top: -20,
+                    left: 100,
                     child: Container(
                       height: 60,
                       width: 180,
@@ -204,7 +201,6 @@ class _OnBoardState extends State<OnBoard> {
                 ],
               ),
             ),
-
             SizedBox(
               height: 5,
             ),
@@ -219,28 +215,24 @@ class _OnBoardState extends State<OnBoard> {
                 Image.asset('assets/images/yellowBigBall.png'),
               ],
             ),
-            
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 260)),
                 Image.asset('assets/images/yellowBall.png'),
               ],
             ),
-            
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 300)),
                 Image.asset('assets/images/purpleBall.png'),
               ],
             ),
-            
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 250)),
                 Image.asset('assets/images/pinkBall.png'),
               ],
             ),
-
             SizedBox(
               height: 5,
             ),
@@ -268,7 +260,6 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
@@ -289,7 +280,6 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
@@ -312,48 +302,46 @@ class _OnBoardState extends State<OnBoard> {
               ],
             ),
             Row(
-  children: [
-    Padding(padding: EdgeInsets.only(left: 40)),
+              children: [
+                Padding(padding: EdgeInsets.only(left: 40)),
+                Text(
+                  'Skip',
+                  style: TextStyle(
+                    color: Color.fromRGBO(0, 32, 85, 1),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                Spacer(),
+                Stack(
+                  children: [
+                    Image.asset(
+                        'assets/images/rectangle.png'), // Rectangle image
 
-    Text(
-      'Skip',
-      style: TextStyle(
-        color: Color.fromRGBO(0, 32, 85, 1),
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-      ),
-    ),
-    Spacer(),
-
-    Stack(
-      children: [
-        Image.asset('assets/images/rectangle.png'), // Rectangle image
-
-        // Positioned widget to adjust the arrow position
-        Positioned(
-          left: 10,
-          right: 0,
-          top: 20,
-          bottom: 0,
-          child: GestureDetector(
-            onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => NextScreen()), 
-              // );
-            },
-            child: Icon(
-              Icons.arrow_forward,  // Right arrow icon
-              color: Colors.white,   // Adjust icon color as needed
-              size: 24,  // Adjust size as needed
-            ),
-          ),
-        ),
-      ],
-    ),
-  ],
-)
-
+                    // Positioned widget to adjust the arrow position
+                    Positioned(
+                      left: 10,
+                      right: 0,
+                      top: 20,
+                      bottom: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => OnBoard2()),
+                          );
+                        },
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                          size: 24,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            )
           ],
         ),
       ),

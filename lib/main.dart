@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mygroupproject/Views/home_screen.dart';
+import 'package:flutterfinalproject/Screens/artBoard.dart';
+import 'package:flutterfinalproject/Screens/onBoard1.dart';
+import 'package:flutterfinalproject/Screens/onBoard2.dart';
 
-void main (){
-  runApp(const MyApp());
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,9 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  HomeScreen(),
+      home: OnBoard2(),
     );
   }
 }

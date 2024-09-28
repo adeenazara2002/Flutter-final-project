@@ -178,6 +178,61 @@ class _SignInState extends State<SignIn> {
                   )
                 ],
               ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 200)),
+                  Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                        color: Color.fromRGBO(0, 32, 85, 1),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 27)),
+                  GestureDetector(
+                    onTap: () {
+                      // Your onTap functionality here
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(117, 110, 243, 1),
+                        borderRadius: BorderRadius.circular(18.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromRGBO(
+                                84, 81, 214, 0.8), // Darker shadow color
+                            offset: Offset(0, 10), // Move the shadow down
+                            blurRadius:
+                                18.0, // Increase blur radius for a softer look
+                          ),
+                        ],
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 125.0, vertical: 16.0),
+                      child: Center(
+                        child: Text(
+                          'Sign In',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

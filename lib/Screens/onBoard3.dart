@@ -63,7 +63,7 @@ class _OnBoard3State extends State<OnBoard3> {
                       left: 60,
                       child: CircleAvatar(
                         backgroundColor: Color.fromRGBO(198, 195, 251, 1),
-                        backgroundImage: AssetImage('assets/images/men.png'),
+                        backgroundImage: AssetImage('assets/images/men3.png'),
                         radius: 110,
                       ),
                     ),
@@ -178,10 +178,9 @@ class _OnBoard3State extends State<OnBoard3> {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
                   Text(
-                    'Work more',
+                    'Manage your',
                     style: TextStyle(
-                      color: Color.fromRGBO(0, 32, 85, 1),
-                        
+                        color: Color.fromRGBO(0, 32, 85, 1),
                         fontSize: 35,
                         fontWeight: FontWeight.w400),
                   ),
@@ -191,7 +190,7 @@ class _OnBoard3State extends State<OnBoard3> {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
                   Text(
-                    'Structured',
+                    'Tasks',
                     style: TextStyle(
                         color: Color.fromRGBO(117, 110, 243, 1),
                         fontSize: 35,
@@ -199,10 +198,18 @@ class _OnBoard3State extends State<OnBoard3> {
                   ),
                   Padding(padding: EdgeInsets.only(left: 10)),
                   Text(
-                    'and',
+                    'quickly',
                     style: TextStyle(
-                      color: Color.fromRGBO(0, 32, 85, 1),
-                        
+                        color: Color.fromRGBO(0, 32, 85, 1),
+                        fontSize: 35,
+                        fontWeight: FontWeight.w400),
+                  ),
+
+                   Padding(padding: EdgeInsets.only(left: 10)),
+                  Text(
+                    'for',
+                    style: TextStyle(
+                        color: Color.fromRGBO(0, 32, 85, 1),
                         fontSize: 35,
                         fontWeight: FontWeight.w400),
                   ),
@@ -212,10 +219,9 @@ class _OnBoard3State extends State<OnBoard3> {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
                   Text(
-                    'Oragnized',
+                    'Results✌',
                     style: TextStyle(
-                      color: Color.fromRGBO(0, 32, 85, 1),
-                        
+                        color: Color.fromRGBO(0, 32, 85, 1),
                         fontSize: 35,
                         fontWeight: FontWeight.w400),
                   ),

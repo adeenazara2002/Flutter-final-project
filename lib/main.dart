@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfinalproject/Screens/artBoard.dart';
-import 'package:flutterfinalproject/Screens/onBoard1.dart';
-import 'package:flutterfinalproject/Screens/onBoard2.dart';
+// import 'package:flutterfinalproject/Screens/artBoard.dart';
+// import 'package:flutterfinalproject/Screens/onBoard1.dart';
+// import 'package:flutterfinalproject/Screens/onBoard2.dart';
+import 'package:flutterfinalproject/Screens/onBoard3.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoard2(),
+      home: OnBoard3(),
     );
   }
 }

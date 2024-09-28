@@ -102,6 +102,82 @@ class _SignInState extends State<SignIn> {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  // container 2
+                  Container(
+                    height: 60,
+                    width: 310,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: Color.fromRGBO(117, 110, 243, 1),
+                      ),
+                    ),
+                    child: TextField(
+                      // controller: passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        hintText: 'albart.ainstain@gmail.com',
+                        hintStyle: TextStyle(
+                            color: Color.fromRGBO(0, 32, 85, 1),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(
+                          vertical: 18.0,
+                          horizontal: 20.0,
+                        ),
+                      ),
+                      style: TextStyle(
+                        color: Color.fromRGBO(0, 32, 85, 1),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  // container 2
+                  Container(
+                    height: 60,
+                    width: 310,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: Color.fromRGBO(233, 241, 255, 1),
+                      ),
+                    ),
+                    child: TextField(
+                      // controller: passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        hintText: 'Enter your password',
+                        hintStyle: TextStyle(
+                            color: Color.fromRGBO(134, 141, 149, 1),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(
+                          vertical: 18.0,
+                          horizontal: 20.0,
+                        ),
+                      ),
+                      style: TextStyle(
+                        color: Color.fromRGBO(134, 141, 149, 1),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ),

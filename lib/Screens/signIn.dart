@@ -38,7 +38,70 @@ class _SignInState extends State<SignIn> {
                         fontWeight: FontWeight.w500),
                   ),
                 ],
-              )
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 280)),
+                  Image.asset('assets/images/yellowBall.png')
+                ],
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 320)),
+                  Image.asset('assets/images/purpleBall.png')
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 310)),
+                  Image.asset('assets/images/pinkBall.png')
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Text(
+                    'Welcome Back',
+                    style: TextStyle(
+                        color: Color.fromRGBO(0, 32, 85, 1),
+                        fontSize: 25,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Text(
+                    'Please enter your email address',
+                    style: TextStyle(
+                        color: Color.fromRGBO(134, 141, 149, 1),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Text(
+                    'and password for login',
+                    style: TextStyle(
+                        color: Color.fromRGBO(134, 141, 149, 1),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

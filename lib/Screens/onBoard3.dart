@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfinalproject/Screens/onBoard2.dart';
-import 'package:flutterfinalproject/Screens/onBoard3.dart';
 
-class OnBoard2 extends StatefulWidget {
-  const OnBoard2({super.key});
+class OnBoard3 extends StatefulWidget {
+  const OnBoard3({super.key});
 
   @override
-  State<OnBoard2> createState() => _OnBoard2State();
+  State<OnBoard3> createState() => _OnBoard3State();
 }
 
-class _OnBoard2State extends State<OnBoard2> {
+class _OnBoard3State extends State<OnBoard3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -181,7 +180,8 @@ class _OnBoard2State extends State<OnBoard2> {
                   Text(
                     'Work more',
                     style: TextStyle(
-                        color: Color.fromRGBO(0, 32, 85, 1),
+                      color: Color.fromRGBO(0, 32, 85, 1),
+                        
                         fontSize: 35,
                         fontWeight: FontWeight.w400),
                   ),
@@ -201,7 +201,8 @@ class _OnBoard2State extends State<OnBoard2> {
                   Text(
                     'and',
                     style: TextStyle(
-                        color: Color.fromRGBO(0, 32, 85, 1),
+                      color: Color.fromRGBO(0, 32, 85, 1),
+                        
                         fontSize: 35,
                         fontWeight: FontWeight.w400),
                   ),
@@ -213,7 +214,8 @@ class _OnBoard2State extends State<OnBoard2> {
                   Text(
                     'Oragnized',
                     style: TextStyle(
-                        color: Color.fromRGBO(0, 32, 85, 1),
+                      color: Color.fromRGBO(0, 32, 85, 1),
+                        
                         fontSize: 35,
                         fontWeight: FontWeight.w400),
                   ),
@@ -253,7 +255,7 @@ class _OnBoard2State extends State<OnBoard2> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => OnBoard3()),
+                                  builder: (context) => OnBoard2()),
                             );
                           },
                           child: Icon(

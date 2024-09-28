@@ -252,9 +252,9 @@ class _OnBoardState extends State<OnBoard> {
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
                 Text(
-                  'Work more',
+                  'Lets create a',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Color.fromRGBO(0, 32, 85, 1),
                       fontSize: 35,
                       fontWeight: FontWeight.w400),
                 ),
@@ -264,7 +264,7 @@ class _OnBoardState extends State<OnBoard> {
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
                 Text(
-                  'Structured',
+                  'space',
                   style: TextStyle(
                       color: Color.fromRGBO(117, 110, 243, 1),
                       fontSize: 35,
@@ -272,7 +272,15 @@ class _OnBoardState extends State<OnBoard> {
                 ),
                 Padding(padding: EdgeInsets.only(left: 10)),
                 Text(
-                  'and',
+                  'for',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 35,
+                      fontWeight: FontWeight.w400),
+                ),
+                Padding(padding: EdgeInsets.only(left: 10)),
+                Text(
+                  'your',
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 35,
@@ -284,9 +292,10 @@ class _OnBoardState extends State<OnBoard> {
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
                 Text(
-                  'Oragnized',
+                  'workflows.',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Color.fromRGBO(0, 32, 85, 1),
+                      
                       fontSize: 35,
                       fontWeight: FontWeight.w400),
                 ),

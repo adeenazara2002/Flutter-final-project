@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfinalproject/Screens/signUp.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -233,6 +234,64 @@ class _SignInState extends State<SignIn> {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 25,
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 140)),
+                  Text(
+                    'SignIn with',
+                    style: TextStyle(
+                        color: Color.fromRGBO(134, 141, 149, 1),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 100)),
+                  Image.asset('assets/images/Social.png'),
+                ],
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Row(
+  children: [
+    Padding(padding: EdgeInsets.only(left: 95)),
+    Text(
+      'Not Registered Yet? ',
+      style: TextStyle(
+        color: Color.fromRGBO(134, 141, 149, 1),
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+      ),
+    ),
+    InkWell(
+      onTap: () {
+        // Navigate to the Sign Up screen
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SignUp()), // Replace with your SignUp screen widget
+        );
+      },
+      child: Text(
+        'Sign Up ',
+        style: TextStyle(
+          color: Color.fromRGBO(117, 110, 243, 1),
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+    ),
+  ],
+),
+
             ],
           ),
         ),

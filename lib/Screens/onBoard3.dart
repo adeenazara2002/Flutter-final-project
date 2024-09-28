@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfinalproject/Screens/Signin.dart';
 import 'package:flutterfinalproject/Screens/onBoard2.dart';
 
 class OnBoard3 extends StatefulWidget {
@@ -53,7 +54,6 @@ class _OnBoard3State extends State<OnBoard3> {
                   Image.asset('assets/images/pinkBall.png'),
                 ],
               ),
-
               Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 320)),
@@ -74,7 +74,6 @@ class _OnBoard3State extends State<OnBoard3> {
                         radius: 110,
                       ),
                     ),
-                    
                     Positioned(
                       // top: 1,
                       left: 10,
@@ -104,11 +103,11 @@ class _OnBoard3State extends State<OnBoard3> {
                                       AssetImage('assets/images/redHead.png'),
                                   radius: 20,
                                 ),
-                              
                               ],
                             ),
-                            SizedBox(height: 5,),
-                           
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -116,7 +115,9 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -124,8 +125,9 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/smallLine.png'),
                               ],
                             ),
-                            SizedBox(height: 5,),
-                           
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -133,8 +135,9 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            SizedBox(height: 5,),
-                           
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -185,7 +188,9 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/smallLine.png'),
                               ],
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -193,7 +198,9 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -201,7 +208,9 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -209,7 +218,9 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -272,8 +283,7 @@ class _OnBoard3State extends State<OnBoard3> {
                         fontSize: 35,
                         fontWeight: FontWeight.w400),
                   ),
-
-                   Padding(padding: EdgeInsets.only(left: 10)),
+                  Padding(padding: EdgeInsets.only(left: 10)),
                   Text(
                     'for',
                     style: TextStyle(
@@ -329,7 +339,7 @@ class _OnBoard3State extends State<OnBoard3> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => OnBoard2()),
+                                  builder: (context) => SignIn()),
                             );
                           },
                           child: Icon(

@@ -110,10 +110,10 @@ class _OnBoardState extends State<OnBoard> {
                       radius: 40, // Adjust radius
                     ),
                   ),
-                  // Grey Container overlapping the top right of redhead image
+
                   Positioned(
-                    top: -20, // Adjust overlap to make container appear higher
-                    left: 70, // Adjust positioning to overlap the redhead image
+                    top: -20,
+                    left: 70,
                     child: Container(
                       height: 60,
                       width: 180,
@@ -315,23 +315,43 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-SizedBox(height: 5,),
+            SizedBox(
+              height: 5,
+            ),
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
-
                 Image.asset('assets/images/Sliedbar.png'),
               ],
             ),
-      
             Row(
-              children: [
-                Padding(padding: EdgeInsets.only(left: 200)),
+  children: [
+    Padding(padding: EdgeInsets.only(left: 40)),
 
-                Text('Skip'),
-                Image.asset('assets/images/rectangle.png')
-              ],
-            )
+    Text(
+      'Skip',
+      style: TextStyle(
+        color: Color.fromRGBO(0, 32, 85, 1),
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+      ),
+    ),
+    Spacer(),
+
+    Stack(
+      alignment: Alignment.center,
+      children: [
+        Image.asset('assets/images/rectangle.png'), // Rectangle image
+        Padding(padding: EdgeInsets.only(top: 10)),
+        Icon(
+          Icons.arrow_forward,  // Right arrow icon
+          color: Colors.white,   // Change icon color as needed
+        ),
+      ],
+    ),
+  ],
+)
+
           ],
         ),
       ),

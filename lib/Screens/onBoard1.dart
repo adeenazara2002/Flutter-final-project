@@ -26,9 +26,7 @@ class _OnBoardState extends State<OnBoard> {
                 Image.asset('assets/images/yellowBall.png'),
               ],
             ),
-            // SizedBox(
-            //   height: 1,
-            // ),
+            
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
@@ -91,7 +89,7 @@ class _OnBoardState extends State<OnBoard> {
               height: 20,
             ),
             SizedBox(
-              height: 120, // Height of the stack
+              height: 120,
               child: Stack(
                 clipBehavior: Clip.none, // Allow overflow for overlap
                 children: [
@@ -101,13 +99,12 @@ class _OnBoardState extends State<OnBoard> {
                       Image.asset('assets/images/purpleBall.png'),
                     ],
                   ),
-                  // CircleAvatar (red head)
                   Positioned(
-                    top: 0, // Place red head at the base
-                    left: 20, // Adjust positioning of avatar
+                    top: 0, 
+                    left: 20, 
                     child: CircleAvatar(
                       backgroundImage: AssetImage('assets/images/redHead.png'),
-                      radius: 40, // Adjust radius
+                      radius: 40, 
                     ),
                   ),
 
@@ -154,24 +151,21 @@ class _OnBoardState extends State<OnBoard> {
             ),
 
             SizedBox(
-              height: 40, // Height of the stack
+              height: 40, 
               child: Stack(
                 clipBehavior: Clip.none, // Allow overflow for overlap
                 children: [
-                  // CircleAvatar (red head)
                   Positioned(
-                    top: 0, // Place red head at the base
-                    left: 260, // Adjust positioning of avatar
+                    top: 0, 
+                    left: 260, 
                     child: CircleAvatar(
                       backgroundImage: AssetImage('assets/images/uncle.png'),
-                      radius: 40, // Adjust radius
+                      radius: 40, 
                     ),
                   ),
-                  // Grey Container overlapping the top right of redhead image
                   Positioned(
-                    top: -20, // Adjust overlap to make container appear higher
-                    left:
-                        100, // Adjust positioning to overlap the redhead image
+                    top: -20, 
+                    left:  100, 
                     child: Container(
                       height: 60,
                       width: 180,
@@ -225,27 +219,21 @@ class _OnBoardState extends State<OnBoard> {
                 Image.asset('assets/images/yellowBigBall.png'),
               ],
             ),
-            // SizedBox(
-            //   height: 20,
-            // ),
+            
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 260)),
                 Image.asset('assets/images/yellowBall.png'),
               ],
             ),
-            // SizedBox(
-            //   height: 10,
-            // ),
+            
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 300)),
                 Image.asset('assets/images/purpleBall.png'),
               ],
             ),
-            // SizedBox(
-            //   height: 10,
-            // ),
+            
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 250)),
@@ -253,7 +241,6 @@ class _OnBoardState extends State<OnBoard> {
               ],
             ),
 
-            // texts start
             SizedBox(
               height: 5,
             ),
@@ -339,13 +326,28 @@ class _OnBoardState extends State<OnBoard> {
     Spacer(),
 
     Stack(
-      alignment: Alignment.center,
       children: [
         Image.asset('assets/images/rectangle.png'), // Rectangle image
-        Padding(padding: EdgeInsets.only(top: 10)),
-        Icon(
-          Icons.arrow_forward,  // Right arrow icon
-          color: Colors.white,   // Change icon color as needed
+
+        // Positioned widget to adjust the arrow position
+        Positioned(
+          left: 10,
+          right: 0,
+          top: 20,
+          bottom: 0,
+          child: GestureDetector(
+            onTap: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => NextScreen()), 
+              // );
+            },
+            child: Icon(
+              Icons.arrow_forward,  // Right arrow icon
+              color: Colors.white,   // Adjust icon color as needed
+              size: 24,  // Adjust size as needed
+            ),
+          ),
         ),
       ],
     ),

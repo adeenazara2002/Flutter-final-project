@@ -202,7 +202,7 @@ class _SignInState extends State<SignIn> {
                   Padding(padding: EdgeInsets.only(left: 27)),
                   GestureDetector(
                     onTap: () {
-                      // Your onTap functionality here
+                      
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -262,36 +262,37 @@ class _SignInState extends State<SignIn> {
                 height: 25,
               ),
               Row(
-  children: [
-    Padding(padding: EdgeInsets.only(left: 95)),
-    Text(
-      'Not Registered Yet? ',
-      style: TextStyle(
-        color: Color.fromRGBO(134, 141, 149, 1),
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-      ),
-    ),
-    InkWell(
-      onTap: () {
-        // Navigate to the Sign Up screen
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => SignUp()), // Replace with your SignUp screen widget
-        );
-      },
-      child: Text(
-        'Sign Up ',
-        style: TextStyle(
-          color: Color.fromRGBO(117, 110, 243, 1),
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-        ),
-      ),
-    ),
-  ],
-),
-
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 95)),
+                  Text(
+                    'Not Registered Yet? ',
+                    style: TextStyle(
+                      color: Color.fromRGBO(134, 141, 149, 1),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                  
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                SignUp()), 
+                      );
+                    },
+                    child: Text(
+                      'Sign Up ',
+                      style: TextStyle(
+                        color: Color.fromRGBO(117, 110, 243, 1),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

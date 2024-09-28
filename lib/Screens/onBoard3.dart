@@ -45,12 +45,19 @@ class _OnBoard3State extends State<OnBoard3> {
                 ],
               ),
               SizedBox(
-                height: 10,
+                height: 5,
               ),
               Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 290)),
                   Image.asset('assets/images/pinkBall.png'),
+                ],
+              ),
+
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 320)),
+                  Image.asset('assets/images/purpleBall.png'),
                 ],
               ),
               SizedBox(
@@ -67,11 +74,12 @@ class _OnBoard3State extends State<OnBoard3> {
                         radius: 110,
                       ),
                     ),
+                    
                     Positioned(
-                      top: 1,
+                      // top: 1,
                       left: 10,
                       child: Container(
-                        height: 60,
+                        height: 90,
                         width: 180,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -96,14 +104,42 @@ class _OnBoard3State extends State<OnBoard3> {
                                       AssetImage('assets/images/redHead.png'),
                                   radius: 20,
                                 ),
-                                Image.asset('assets/images/bigLine.png'),
+                              
                               ],
                             ),
+                            SizedBox(height: 5,),
+                           
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                SizedBox(width: 60),
+                                SizedBox(width: 10),
+                                Image.asset('assets/images/bigLine.png'),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(width: 10),
                                 Image.asset('assets/images/smallLine.png'),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                           
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(width: 10),
+                                Image.asset('assets/images/bigLine.png'),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                           
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(width: 10),
+                                Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
                           ],
@@ -111,10 +147,10 @@ class _OnBoard3State extends State<OnBoard3> {
                       ),
                     ),
                     Positioned(
-                      top: 70,
+                      top: 120,
                       left: 190,
                       child: Container(
-                        height: 60,
+                        height: 90,
                         width: 180,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -147,6 +183,38 @@ class _OnBoard3State extends State<OnBoard3> {
                               children: [
                                 SizedBox(width: 60),
                                 Image.asset('assets/images/smallLine.png'),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(width: 60),
+                                Image.asset('assets/images/bigLine.png'),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(width: 60),
+                                Image.asset('assets/images/bigLine.png'),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(width: 60),
+                                Image.asset('assets/images/bigLine.png'),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(width: 60),
+                                Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
                           ],

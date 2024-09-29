@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 class ProfileView extends StatelessWidget {
   final ProfileController controller = Get.put(ProfileController());
-
   const ProfileView({super.key});
 
   @override
@@ -48,7 +47,7 @@ class ProfileView extends StatelessWidget {
               ),
                backgroundColor: Colors.white
             ),
-            child: Text('Edit'),
+            child: const Text('Edit'),
           ),
           const SizedBox(height: 20),
           
@@ -89,7 +88,9 @@ class ProfileView extends StatelessWidget {
               children: [
                 OptionItem( label: 'My Projects', onTap: () {}),
                 OptionItem(label: 'Join a Team', onTap: () {}),
-                OptionItem( label: 'Settings', onTap: () {}),
+                OptionItem( label: 'Settings', onTap: () {
+                  
+                }),
                 OptionItem( label: 'My Task', onTap: () {}),
               ],
             ),

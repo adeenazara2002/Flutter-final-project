@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfinalproject/Screens/Signin.dart';
-import 'package:flutterfinalproject/Screens/onBoard2.dart';
 
 class OnBoard3 extends StatefulWidget {
   const OnBoard3({super.key});

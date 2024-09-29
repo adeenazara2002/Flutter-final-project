@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfinalproject/Screens/onBoard2.dart';
 import 'package:flutterfinalproject/Screens/onBoard3.dart';
 
 class OnBoard2 extends StatefulWidget {

@@ -20,10 +20,10 @@ class _SignUpState extends State<SignUp> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
                   Icon(
@@ -43,32 +43,32 @@ class _SignUpState extends State<SignUp> {
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 280)),
+                  const Padding(padding: EdgeInsets.only(left: 280)),
                   Image.asset('assets/images/yellowBall.png')
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 320)),
+                  const Padding(padding: EdgeInsets.only(left: 320)),
                   Image.asset('assets/images/purpleBall.png')
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 310)),
+                  const Padding(padding: EdgeInsets.only(left: 310)),
                   Image.asset('assets/images/pinkBall.png')
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 20)),
                   Text(
@@ -80,7 +80,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 20)),
                   Text(
@@ -92,7 +92,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 20)),
                   Text(
@@ -104,12 +104,12 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 20)),
+                  const Padding(padding: EdgeInsets.only(left: 20)),
                   // container 2
                   Container(
                     height: 60,
@@ -117,10 +117,10 @@ class _SignUpState extends State<SignUp> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: Color.fromRGBO(117, 110, 243, 1),
+                        color: const Color.fromRGBO(117, 110, 243, 1),
                       ),
                     ),
-                    child: TextField(
+                    child: const TextField(
                       // controller: passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
@@ -142,12 +142,12 @@ class _SignUpState extends State<SignUp> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 20)),
+                  const Padding(padding: EdgeInsets.only(left: 20)),
                   // container 2
                   Container(
                     height: 60,
@@ -155,10 +155,10 @@ class _SignUpState extends State<SignUp> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: Color.fromRGBO(233, 241, 255, 1),
+                        color: const Color.fromRGBO(233, 241, 255, 1),
                       ),
                     ),
-                    child: TextField(
+                    child: const TextField(
                       // controller: passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
@@ -180,12 +180,12 @@ class _SignUpState extends State<SignUp> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 20)),
+                  const Padding(padding: EdgeInsets.only(left: 20)),
                   // container 2
                   Container(
                     height: 60,
@@ -193,10 +193,10 @@ class _SignUpState extends State<SignUp> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: Color.fromRGBO(233, 241, 255, 1),
+                        color: const Color.fromRGBO(233, 241, 255, 1),
                       ),
                     ),
-                    child: TextField(
+                    child: const TextField(
                       // controller: passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
@@ -218,19 +218,19 @@ class _SignUpState extends State<SignUp> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 27)),
+                  const Padding(padding: EdgeInsets.only(left: 27)),
                   GestureDetector(
                     onTap: () {},
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color.fromRGBO(117, 110, 243, 1),
+                        color: const Color.fromRGBO(117, 110, 243, 1),
                         borderRadius: BorderRadius.circular(18.0),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Color.fromRGBO(
                                 84, 81, 214, 0.8), // Darker shadow color
@@ -242,7 +242,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 125.0, vertical: 16.0),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Sign Up',
                           style: TextStyle(
@@ -256,10 +256,10 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 140)),
                   Text(
@@ -271,22 +271,22 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 100)),
+                  const Padding(padding: EdgeInsets.only(left: 100)),
                   Image.asset('assets/images/Social.png'),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 95)),
-                  Text(
+                  const Padding(padding: EdgeInsets.only(left: 95)),
+                  const Text(
                     'Have an Account? ',
                     style: TextStyle(
                       color: Color.fromRGBO(134, 141, 149, 1),
@@ -298,10 +298,10 @@ class _SignUpState extends State<SignUp> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignIn()),
+                        MaterialPageRoute(builder: (context) => const SignIn()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Sign In ',
                       style: TextStyle(
                         color: Color.fromRGBO(117, 110, 243, 1),

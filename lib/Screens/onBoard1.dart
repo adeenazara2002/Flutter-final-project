@@ -18,49 +18,49 @@ class _OnBoardState extends State<OnBoard> {
         color: Colors.white,
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 60,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 300)),
+                const Padding(padding: EdgeInsets.only(left: 300)),
                 Image.asset('assets/images/yellowBall.png'),
               ],
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 30)),
+                const Padding(padding: EdgeInsets.only(left: 30)),
                 Image.asset('assets/images/pinkMiddle.png'),
-                Padding(padding: EdgeInsets.only(left: 90)),
+                const Padding(padding: EdgeInsets.only(left: 90)),
                 Container(
                   height: 60,
                   width: 180,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [
+                    gradient: const LinearGradient(colors: [
                       Color.fromRGBO(153, 153, 153, 0.25),
                       Color.fromRGBO(202, 202, 202, 0.25),
                     ]),
                     borderRadius: BorderRadius.circular(12),
                     border:
-                        Border.all(color: Color.fromRGBO(202, 202, 202, 0.25)),
+                        Border.all(color: const Color.fromRGBO(202, 202, 202, 0.25)),
                   ),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Row(
                         children: [
-                          Padding(padding: EdgeInsets.only(left: 90)),
+                          const Padding(padding: EdgeInsets.only(left: 90)),
                           Image.asset('assets/images/bigLine.png'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          Padding(padding: EdgeInsets.only(left: 130)),
+                          const Padding(padding: EdgeInsets.only(left: 130)),
                           Image.asset('assets/images/smallLine.png'),
                         ],
                       ),
@@ -71,11 +71,11 @@ class _OnBoardState extends State<OnBoard> {
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 330)),
+                const Padding(padding: EdgeInsets.only(left: 330)),
                 Image.asset('assets/images/pinkBall.png'),
               ],
             ),
-            Row(
+            const Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 270)),
                 CircleAvatar(
@@ -84,7 +84,7 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -94,11 +94,11 @@ class _OnBoardState extends State<OnBoard> {
                 children: [
                   Row(
                     children: [
-                      Padding(padding: EdgeInsets.only(left: 260)),
+                      const Padding(padding: EdgeInsets.only(left: 260)),
                       Image.asset('assets/images/purpleBall.png'),
                     ],
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 0,
                     left: 20,
                     child: CircleAvatar(
@@ -113,7 +113,7 @@ class _OnBoardState extends State<OnBoard> {
                       height: 60,
                       width: 180,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [
                             Color.fromRGBO(153, 153, 153, 0.25),
                             Color.fromRGBO(202, 202, 202, 0.25),
@@ -121,22 +121,22 @@ class _OnBoardState extends State<OnBoard> {
                         ),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Color.fromRGBO(202, 202, 202, 0.25),
+                          color: const Color.fromRGBO(202, 202, 202, 0.25),
                         ),
                       ),
                       child: Column(
                         children: [
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
                           Row(
                             children: [
-                              Padding(padding: EdgeInsets.only(left: 90)),
+                              const Padding(padding: EdgeInsets.only(left: 90)),
                               Image.asset('assets/images/bigLine.png'),
                             ],
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Row(
                             children: [
-                              Padding(padding: EdgeInsets.only(left: 130)),
+                              const Padding(padding: EdgeInsets.only(left: 130)),
                               Image.asset('assets/images/smallLine.png'),
                             ],
                           ),
@@ -152,7 +152,7 @@ class _OnBoardState extends State<OnBoard> {
               child: Stack(
                 clipBehavior: Clip.none, // Allow overflow for overlap
                 children: [
-                  Positioned(
+                  const Positioned(
                     top: 0,
                     left: 260,
                     child: CircleAvatar(
@@ -167,7 +167,7 @@ class _OnBoardState extends State<OnBoard> {
                       height: 60,
                       width: 180,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [
                             Color.fromRGBO(153, 153, 153, 0.25),
                             Color.fromRGBO(202, 202, 202, 0.25),
@@ -175,22 +175,22 @@ class _OnBoardState extends State<OnBoard> {
                         ),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Color.fromRGBO(202, 202, 202, 0.25),
+                          color: const Color.fromRGBO(202, 202, 202, 0.25),
                         ),
                       ),
                       child: Column(
                         children: [
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
                           Row(
                             children: [
-                              Padding(padding: EdgeInsets.only(left: 90)),
+                              const Padding(padding: EdgeInsets.only(left: 90)),
                               Image.asset('assets/images/bigLine.png'),
                             ],
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Row(
                             children: [
-                              Padding(padding: EdgeInsets.only(left: 130)),
+                              const Padding(padding: EdgeInsets.only(left: 130)),
                               Image.asset('assets/images/smallLine.png'),
                             ],
                           ),
@@ -201,12 +201,12 @@ class _OnBoardState extends State<OnBoard> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 80)),
+                const Padding(padding: EdgeInsets.only(left: 80)),
                 Image.asset('assets/images/purpleBall.png'),
               ],
             ),
@@ -217,26 +217,26 @@ class _OnBoardState extends State<OnBoard> {
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 260)),
+                const Padding(padding: EdgeInsets.only(left: 260)),
                 Image.asset('assets/images/yellowBall.png'),
               ],
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 300)),
+                const Padding(padding: EdgeInsets.only(left: 300)),
                 Image.asset('assets/images/purpleBall.png'),
               ],
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 250)),
+                const Padding(padding: EdgeInsets.only(left: 250)),
                 Image.asset('assets/images/pinkBall.png'),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
-            Row(
+            const Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
                 Text(
@@ -248,7 +248,7 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-            Row(
+            const Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
                 Text(
@@ -260,7 +260,7 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-            Row(
+            const Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
                 Text(
@@ -288,7 +288,7 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-            Row(
+            const Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
                 Text(
@@ -301,19 +301,19 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 30)),
+                const Padding(padding: EdgeInsets.only(left: 30)),
                 Image.asset('assets/images/Sliedbar.png'),
               ],
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 40)),
-                Text(
+                const Padding(padding: EdgeInsets.only(left: 40)),
+                const Text(
                   'Skip',
                   style: TextStyle(
                     color: Color.fromRGBO(0, 32, 85, 1),
@@ -321,7 +321,7 @@ class _OnBoardState extends State<OnBoard> {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Stack(
                   children: [
                     Image.asset(
@@ -337,10 +337,10 @@ class _OnBoardState extends State<OnBoard> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => OnBoard2()),
+                            MaterialPageRoute(builder: (context) => const OnBoard2()),
                           );
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_forward,
                           color: Colors.white,
                           size: 24,

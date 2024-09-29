@@ -17,10 +17,10 @@ class _SettingsState extends State<Settings> {
         color: Colors.white,
         child: SingleChildScrollView(
           child: Column(children: [
-            SizedBox(
+            const SizedBox(
               height: 80,
             ),
-            Row(
+            const Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
                 Icon(
@@ -38,21 +38,21 @@ class _SettingsState extends State<Settings> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 20)),
+                const Padding(padding: EdgeInsets.only(left: 20)),
                 Container(
                   height: 60,
                   width: 320,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Color.fromRGBO(233, 241, 255, 1)),
+                    border: Border.all(color: const Color.fromRGBO(233, 241, 255, 1)),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Padding(padding: EdgeInsets.only(left: 20)),
                       Text(
@@ -73,21 +73,21 @@ class _SettingsState extends State<Settings> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 20)),
+                const Padding(padding: EdgeInsets.only(left: 20)),
                 Container(
                   height: 60,
                   width: 320,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Color.fromRGBO(233, 241, 255, 1)),
+                    border: Border.all(color: const Color.fromRGBO(233, 241, 255, 1)),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Padding(padding: EdgeInsets.only(left: 20)),
                       Text(
@@ -108,21 +108,21 @@ class _SettingsState extends State<Settings> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 20)),
+                const Padding(padding: EdgeInsets.only(left: 20)),
                 Container(
                   height: 60,
                   width: 320,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Color.fromRGBO(233, 241, 255, 1)),
+                    border: Border.all(color: const Color.fromRGBO(233, 241, 255, 1)),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Padding(padding: EdgeInsets.only(left: 20)),
                       Text(
@@ -143,21 +143,21 @@ class _SettingsState extends State<Settings> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 20)),
+                const Padding(padding: EdgeInsets.only(left: 20)),
                 Container(
                   height: 60,
                   width: 320,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Color.fromRGBO(233, 241, 255, 1)),
+                    border: Border.all(color: const Color.fromRGBO(233, 241, 255, 1)),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Padding(padding: EdgeInsets.only(left: 20)),
                       Text(
@@ -178,21 +178,21 @@ class _SettingsState extends State<Settings> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 20)),
+                const Padding(padding: EdgeInsets.only(left: 20)),
                 Container(
                   height: 60,
                   width: 320,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Color.fromRGBO(233, 241, 255, 1)),
+                    border: Border.all(color: const Color.fromRGBO(233, 241, 255, 1)),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Padding(padding: EdgeInsets.only(left: 20)),
                       Text(
@@ -213,21 +213,21 @@ class _SettingsState extends State<Settings> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 20)),
+                const Padding(padding: EdgeInsets.only(left: 20)),
                 Container(
                   height: 60,
                   width: 320,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Color.fromRGBO(233, 241, 255, 1)),
+                    border: Border.all(color: const Color.fromRGBO(233, 241, 255, 1)),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Padding(padding: EdgeInsets.only(left: 20)),
                       Text(
@@ -248,21 +248,21 @@ class _SettingsState extends State<Settings> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(left: 20)),
+                const Padding(padding: EdgeInsets.only(left: 20)),
                 Container(
                   height: 60,
                   width: 320,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Color.fromRGBO(233, 241, 255, 1)),
+                    border: Border.all(color: const Color.fromRGBO(233, 241, 255, 1)),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Padding(padding: EdgeInsets.only(left: 20)),
                       Text(

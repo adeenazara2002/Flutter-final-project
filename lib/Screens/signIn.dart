@@ -13,45 +13,49 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _passwordVisible = false;
 
   // Firebase instance
 
-    final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   void _signIn() async {
-    try {
-      // Sign in with email and password
-      await _auth.signInWithEmailAndPassword(
-        email: _emailController.text,
-        password: _passwordController.text,
-      );
+    if (_formKey.currentState!.validate()) {
+      try {
+        // Sign in with email and password
+        await _auth.signInWithEmailAndPassword(
+          email: _emailController.text,
+          password: _passwordController.text,
+        );
 
-      // Navigate to Home screen
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => Settings()),
-      );
-    } catch (e) {
-      print(e);
-      // You might want to show an error message here
+        // Navigate to Home screen
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => Settings()),
+        );
+      } catch (e) {
+        // Show error message if sign in fails
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Sign-in failed: ${e.toString()}')),
+        );
+      }
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        color: Colors.white,
-        child: SingleChildScrollView(
+        body: Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      color: Colors.white,
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
           child: Column(
             children: [
-              SizedBox(
-                height: 80,
-              ),
+              SizedBox(height: 80),
               Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
@@ -133,82 +137,122 @@ class _SignInState extends State<SignIn> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                children: [
-                  Padding(padding: EdgeInsets.only(left: 20)),
-                  // container 2
-                  Container(
-                    height: 60,
-                    width: 310,
-                    decoration: BoxDecoration(
+              SizedBox(height: 30),
+              // Email field
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: TextFormField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'albart.ainstain@gmail.com',
+                    // Border when the field is not focused (pink color)
+                    enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: Color.fromRGBO(117, 110, 243, 1),
-                      ),
-                    ),
-                    child: TextField(
-                      controller: _emailController,
-                      decoration: InputDecoration(
-                        hintText: 'albart.ainstain@gmail.com',
-                        hintStyle: TextStyle(
-                            color: Color.fromRGBO(0, 32, 85, 1),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(
-                          vertical: 18.0,
-                          horizontal: 20.0,
-                        ),
-                      ),
-                      style: TextStyle(
-                        color: Color.fromRGBO(0, 32, 85, 1),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Padding(padding: EdgeInsets.only(left: 20)),
-                  // container 2
-                  Container(
-                    height: 60,
-                    width: 310,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
+                      borderSide: BorderSide(
                         color: Color.fromRGBO(233, 241, 255, 1),
+                        width: 2.0,
                       ),
                     ),
-                    child: TextField(
-                      controller: _passwordController,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        hintText: 'Enter your password',
-                        hintStyle: TextStyle(
-                            color: Color.fromRGBO(134, 141, 149, 1),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(
-                          vertical: 18.0,
-                          horizontal: 20.0,
-                        ),
+                    // Border when the field is focused (blue color)
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(
+                        color: Color.fromRGBO(233, 241, 255, 1),
+                        width: 2.0,
                       ),
-                      style: TextStyle(
+                    ),
+                    // Error border (optional)
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(
+                        // color: Colors.red, // Red color when there is an error
+                        width: 2.0,
+                      ),
+                    ),
+                    labelStyle: TextStyle(
                         color: Color.fromRGBO(134, 141, 149, 1),
-                      ),
-                      
-                    ),
-                  )
-                ],
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                    hintStyle: TextStyle(
+                        color: Color.fromRGBO(134, 141, 149, 1),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Email is required';
+                    } else if (!RegExp(r'^[^@]+@gmail\.com$').hasMatch(value)) {
+                      return 'Please enter a valid Gmail address';
+                    }
+                    return null;
+                  },
+                ),
               ),
+
+              SizedBox(height: 10),
+              // Password field
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: TextFormField(
+                  controller: _passwordController,
+                  obscureText: !_passwordVisible,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(
+                          color: Color.fromRGBO(233, 241, 255, 1),
+                          width: 2.0, // You can adjust the width if needed
+                        )),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(
+                        color: Color.fromRGBO(233, 241, 255, 1),
+                        width: 2.0, // You can adjust the width if needed
+                      ),
+                    ),
+                    labelStyle: TextStyle(
+                        color: Color.fromRGBO(134, 141, 149, 1),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                    hintStyle: TextStyle(
+                        color: Color.fromRGBO(134, 141, 149, 1),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                    // Optional: Customize the focused border (when the user taps the field)
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(
+                        color: Color.fromRGBO(233, 241, 255, 1),
+                        width: 2.0,
+                      ),
+                    ),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _passwordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _passwordVisible = !_passwordVisible;
+                        });
+                      },
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Password is required';
+                    } else if (value.length < 8) {
+                      return 'Password must be at least 8 characters long';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+
               SizedBox(
                 height: 20,
               ),
@@ -224,36 +268,28 @@ class _SignInState extends State<SignIn> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 30,
+              SizedBox(height: 30),
+              // Sign In button
+              ElevatedButton(
+                onPressed: _signIn,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromRGBO(117, 110, 243, 1),
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 95.0, vertical: 16.0),
+                  child: Text(
+                    'Sign In',
+                    style:
+                        TextStyle(fontSize: 17.0, fontWeight: FontWeight.w600),
+                  ),
+                ),
               ),
-              Row(
-                children: [
-                  Padding(padding: EdgeInsets.only(left: 27)),
-                  ElevatedButton(
-                        onPressed: _signIn,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromRGBO(117, 110, 243, 1),
-                          foregroundColor: Colors.white,
-                          // backgroundColor: AppColors.pinkColor,
-                          // foregroundColor: AppColors.screenColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 95.0, vertical: 16.0),
-                          child: Text(
-                            'Sign In',
-                            style: TextStyle(
-                                fontSize: 17.0, fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ),
 
-                ],
-              ),
               SizedBox(
                 height: 25,
               ),
@@ -314,6 +350,6 @@ class _SignInState extends State<SignIn> {
           ),
         ),
       ),
-    );
+    ));
   }
 }

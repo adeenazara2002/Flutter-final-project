@@ -25,9 +25,9 @@ class _SignUpState extends State<SignUp> {
     String email = _emailController.text;
     String password = _passwordController.text;
 
-    // Name validation: only letters
-    if (name.isEmpty || !RegExp(r'^[a-zA-Z]+$').hasMatch(name)) {
-      _showErrorDialog("Please enter a valid name (letters only).");
+    // Name validation: only letters and spaces
+    if (name.isEmpty || !RegExp(r'^[a-zA-Z\s]+$').hasMatch(name)) {
+      _showErrorDialog("Please enter a valid name (letters and spaces only).");
       return;
     }
 

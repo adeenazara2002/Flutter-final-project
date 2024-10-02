@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterfinalproject/Screens/settings.dart';
 import 'package:flutterfinalproject/Screens/signUp.dart';
 
 class SignIn extends StatefulWidget {
@@ -9,6 +11,34 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  bool _passwordVisible = false;
+
+  // Firebase instance
+
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void _signIn() async {
+    try {
+      // Sign in with email and password
+      await _auth.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+
+      // Navigate to Home screen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Settings()),
+      );
+    } catch (e) {
+      print(e);
+      // You might want to show an error message here
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,8 +150,7 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                     child: TextField(
-                      // controller: passwordController,
-                      obscureText: true,
+                      controller: _emailController,
                       decoration: InputDecoration(
                         hintText: 'albart.ainstain@gmail.com',
                         hintStyle: TextStyle(
@@ -158,7 +187,7 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                     child: TextField(
-                      // controller: passwordController,
+                      controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: 'Enter your password',
@@ -175,6 +204,7 @@ class _SignInState extends State<SignIn> {
                       style: TextStyle(
                         color: Color.fromRGBO(134, 141, 149, 1),
                       ),
+                      
                     ),
                   )
                 ],
@@ -200,38 +230,28 @@ class _SignInState extends State<SignIn> {
               Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 27)),
-                  GestureDetector(
-                    onTap: () {
-                      
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color.fromRGBO(117, 110, 243, 1),
-                        borderRadius: BorderRadius.circular(18.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(
-                                84, 81, 214, 0.8), // Darker shadow color
-                            offset: Offset(0, 10), // Move the shadow down
-                            blurRadius:
-                                18.0, // Increase blur radius for a softer look
+                  ElevatedButton(
+                        onPressed: _signIn,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromRGBO(117, 110, 243, 1),
+                          foregroundColor: Colors.white,
+                          // backgroundColor: AppColors.pinkColor,
+                          // foregroundColor: AppColors.screenColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
                           ),
-                        ],
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 125.0, vertical: 16.0),
-                      child: Center(
-                        child: Text(
-                          'Sign In',
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 95.0, vertical: 16.0),
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                                fontSize: 17.0, fontWeight: FontWeight.w600),
                           ),
                         ),
                       ),
-                    ),
-                  ),
+
                 ],
               ),
               SizedBox(
@@ -274,12 +294,9 @@ class _SignInState extends State<SignIn> {
                   ),
                   InkWell(
                     onTap: () {
-                  
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                SignUp()), 
+                        MaterialPageRoute(builder: (context) => SignUp()),
                       );
                     },
                     child: Text(

@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfinalproject/Screens/Signin.dart';
 import 'package:flutterfinalproject/Screens/signUp.dart';
+import 'package:flutterfinalproject/Services/firebaseFunctions.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -10,6 +12,85 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  bool _passwordVisible = false;
+
+  // Firebase instance
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void _SignUp() async {
+    String name = _nameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    // Name validation: only letters
+    if (name.isEmpty || !RegExp(r'^[a-zA-Z]+$').hasMatch(name)) {
+      _showErrorDialog("Please enter a valid name (letters only).");
+      return;
+    }
+
+    // Email validation: must end with '@gmail.com'
+    if (email.isEmpty ||
+        !RegExp(r'^[a-zA-Z0-9._%+-]+@gmail\.com$').hasMatch(email)) {
+      _showErrorDialog("Please enter a valid Gmail address.");
+      return;
+    }
+
+    // Password validation: at least 8 characters, including uppercase, lowercase, numbers, and special characters
+    if (password.isEmpty ||
+        password.length < 8 ||
+        !RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).+$')
+            .hasMatch(password)) {
+      _showErrorDialog(
+          "Password must be at least 8 characters long and include uppercase, lowercase, numbers, and special characters.");
+      return;
+    }
+
+    try {
+      // Create user with email and password
+      UserCredential userCredential =
+          await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      // Clear the fields after signup
+      _nameController.clear();
+      _emailController.clear();
+      _passwordController.clear();
+
+      // Navigate to SignIn screen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => SignIn()),
+      );
+    } catch (e) {
+      print(e);
+      _showErrorDialog("Sign up failed. Please try again.");
+    }
+  }
+
+// Function to show error dialogs
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Error"),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text("OK"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -121,8 +202,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     child: TextField(
-                      // controller: passwordController,
-                      obscureText: true,
+                      controller: _nameController,
                       decoration: InputDecoration(
                         hintText: 'Albert Ainstain',
                         hintStyle: TextStyle(
@@ -159,8 +239,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     child: TextField(
-                      // controller: passwordController,
-                      obscureText: true,
+                      controller: _emailController,
                       decoration: InputDecoration(
                         hintText: 'Enter your mail',
                         hintStyle: TextStyle(
@@ -197,7 +276,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     child: TextField(
-                      // controller: passwordController,
+                      controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: 'Enter your password',
@@ -224,32 +303,25 @@ class _SignUpState extends State<SignUp> {
               Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 27)),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color.fromRGBO(117, 110, 243, 1),
-                        borderRadius: BorderRadius.circular(18.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(
-                                84, 81, 214, 0.8), // Darker shadow color
-                            offset: Offset(0, 10), // Move the shadow down
-                            blurRadius:
-                                18.0, // Increase blur radius for a softer look
-                          ),
-                        ],
+                  ElevatedButton(
+                    onPressed: _SignUp,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromRGBO(117, 110, 243, 1),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
+                    ),
+                    child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 125.0, vertical: 16.0),
-                      child: Center(
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
-                          ),
+                        horizontal: 95.0,
+                        vertical: 16.0,
+                      ),
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),

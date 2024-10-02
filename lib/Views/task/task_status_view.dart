@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfinalproject/Views/task/legend_item.dart';
+import 'package:flutterfinalproject/Views/task/task_card.dart';
 import 'package:flutterfinalproject/controllers/task_status_controller.dart';
+import 'package:flutterfinalproject/models/task_status_model.dart';
 import 'package:get/get.dart';
-
-import 'package:percent_indicator/percent_indicator.dart'; 
-
+import 'package:percent_indicator/percent_indicator.dart';
 
 class TaskStatusView extends StatelessWidget {
   final TaskStatusController controller = Get.put(TaskStatusController());
 
-  const TaskStatusView({super.key});
+  TaskStatusView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,6 @@ class TaskStatusView extends StatelessWidget {
                   circularStrokeCap: CircularStrokeCap.round,
                 )),
           ),
-          
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
@@ -53,32 +53,28 @@ class TaskStatusView extends StatelessWidget {
               ],
             ),
           ),
-      
-          const Row(mainAxisAlignment: MainAxisAlignment.start,
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding:
-                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: Text('Monthly',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    style: TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
               ),
             ],
           ),
           Expanded(
             child: Obx(() => ListView.builder(
-                  itemCount: controller.taskList.length,
-                  itemBuilder: (context, index) {
-                    var task = controller.taskList[index];
-                    return TaskCard(task: task);
-                  },
-                )),
+              itemCount: controller.taskList.length,
+              itemBuilder: (context, index) {
+                var task = controller.taskList[index];
+               // return TaskCard(task: task); // Ensure correct task is passed
+              },
+            )),
           ),
         ],
       ),
-      
     );
   }
 }
-
-
-

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class ProfileView extends StatelessWidget {
   final ProfileController controller = Get.put(ProfileController());
-  const ProfileView({super.key});
+   ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {

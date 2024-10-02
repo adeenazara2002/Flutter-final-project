@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfinalproject/Screens/onBoard2.dart';
+import 'package:get/get.dart';
 
-class OnBoard extends StatefulWidget {
+class OnBoard extends StatelessWidget {
   const OnBoard({super.key});
 
-  @override
-  State<OnBoard> createState() => _OnBoardState();
-}
-
-class _OnBoardState extends State<OnBoard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,9 +14,7 @@ class _OnBoardState extends State<OnBoard> {
         color: Colors.white,
         child: Column(
           children: [
-            const SizedBox(
-              height: 60,
-            ),
+            const SizedBox(height: 60),
             Row(
               children: [
                 const Padding(padding: EdgeInsets.only(left: 300)),
@@ -41,23 +35,18 @@ class _OnBoardState extends State<OnBoard> {
                       Color.fromRGBO(202, 202, 202, 0.25),
                     ]),
                     borderRadius: BorderRadius.circular(12),
-                    border:
-                        Border.all(color: const Color.fromRGBO(202, 202, 202, 0.25)),
+                    border: Border.all(color: const Color.fromRGBO(202, 202, 202, 0.25)),
                   ),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
+                      const SizedBox(height: 20),
                       Row(
                         children: [
                           const Padding(padding: EdgeInsets.only(left: 90)),
                           Image.asset('assets/images/bigLine.png'),
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
                           const Padding(padding: EdgeInsets.only(left: 130)),
@@ -84,13 +73,11 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             SizedBox(
               height: 120,
               child: Stack(
-                clipBehavior: Clip.none, // Allow overflow for overlap
+                clipBehavior: Clip.none,
                 children: [
                   Row(
                     children: [
@@ -150,7 +137,7 @@ class _OnBoardState extends State<OnBoard> {
             SizedBox(
               height: 40,
               child: Stack(
-                clipBehavior: Clip.none, // Allow overflow for overlap
+                clipBehavior: Clip.none,
                 children: [
                   const Positioned(
                     top: 0,
@@ -201,9 +188,7 @@ class _OnBoardState extends State<OnBoard> {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            const SizedBox(height: 5),
             Row(
               children: [
                 const Padding(padding: EdgeInsets.only(left: 80)),
@@ -233,9 +218,7 @@ class _OnBoardState extends State<OnBoard> {
                 Image.asset('assets/images/pinkBall.png'),
               ],
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            const SizedBox(height: 5),
             const Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 30)),
@@ -295,15 +278,12 @@ class _OnBoardState extends State<OnBoard> {
                   'workflows.',
                   style: TextStyle(
                       color: Color.fromRGBO(0, 32, 85, 1),
-                      
                       fontSize: 35,
                       fontWeight: FontWeight.w400),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            const SizedBox(height: 5),
             Row(
               children: [
                 const Padding(padding: EdgeInsets.only(left: 30)),
@@ -324,9 +304,7 @@ class _OnBoardState extends State<OnBoard> {
                 const Spacer(),
                 Stack(
                   children: [
-                    Image.asset(
-                        'assets/images/rectangle.png'), // Rectangle image
-
+                    Image.asset('assets/images/rectangle.png'), // Rectangle image
                     // Positioned widget to adjust the arrow position
                     Positioned(
                       left: 10,
@@ -335,10 +313,7 @@ class _OnBoardState extends State<OnBoard> {
                       bottom: 0,
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const OnBoard2()),
-                          );
+                          Get.to(() => const OnBoard2()); // Using GetX for navigation
                         },
                         child: const Icon(
                           Icons.arrow_forward,

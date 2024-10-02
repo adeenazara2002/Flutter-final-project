@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfinalproject/Screens/onBoard3.dart';
+import 'package:get/get.dart';
 
-class OnBoard2 extends StatefulWidget {
+class OnBoard2 extends StatelessWidget {
   const OnBoard2({super.key});
 
-  @override
-  State<OnBoard2> createState() => _OnBoard2State();
-}
-
-class _OnBoard2State extends State<OnBoard2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,9 +40,7 @@ class _OnBoard2State extends State<OnBoard2> {
                   Image.asset('assets/images/lightBlueBall.png'),
                 ],
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   const Padding(padding: EdgeInsets.only(left: 290)),
@@ -210,7 +204,7 @@ class _OnBoard2State extends State<OnBoard2> {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
                   Text(
-                    'Oragnized',
+                    'Organized',
                     style: TextStyle(
                         color: Color.fromRGBO(0, 32, 85, 1),
                         fontSize: 35,
@@ -218,9 +212,7 @@ class _OnBoard2State extends State<OnBoard2> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 5,
-              ),
+              const SizedBox(height: 5),
               Row(
                 children: [
                   const Padding(padding: EdgeInsets.only(left: 30)),
@@ -249,11 +241,7 @@ class _OnBoard2State extends State<OnBoard2> {
                         bottom: 0,
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const OnBoard3()),
-                            );
+                            Get.to(() => const OnBoard3()); // Using GetX for navigation
                           },
                           child: const Icon(
                             Icons.arrow_forward,

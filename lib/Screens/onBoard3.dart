@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfinalproject/Screens/Signin.dart';
+import 'package:get/get.dart';
 
-class OnBoard3 extends StatefulWidget {
+class OnBoard3 extends StatelessWidget {
   const OnBoard3({super.key});
 
-  @override
-  State<OnBoard3> createState() => _OnBoard3State();
-}
-
-class _OnBoard3State extends State<OnBoard3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,9 +40,7 @@ class _OnBoard3State extends State<OnBoard3> {
                   Image.asset('assets/images/lightBlueBall.png'),
                 ],
               ),
-              const SizedBox(
-                height: 5,
-              ),
+              const SizedBox(height: 5),
               Row(
                 children: [
                   const Padding(padding: EdgeInsets.only(left: 290)),
@@ -74,7 +68,6 @@ class _OnBoard3State extends State<OnBoard3> {
                       ),
                     ),
                     Positioned(
-                      // top: 1,
                       left: 10,
                       child: Container(
                         height: 90,
@@ -104,9 +97,7 @@ class _OnBoard3State extends State<OnBoard3> {
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                            const SizedBox(height: 5),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -114,9 +105,7 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                            const SizedBox(height: 5),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -124,9 +113,7 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/smallLine.png'),
                               ],
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                            const SizedBox(height: 5),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -134,9 +121,7 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                            const SizedBox(height: 5),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -187,9 +172,7 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/smallLine.png'),
                               ],
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                            const SizedBox(height: 5),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -197,9 +180,7 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                            const SizedBox(height: 5),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -207,9 +188,7 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                            const SizedBox(height: 5),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -217,9 +196,7 @@ class _OnBoard3State extends State<OnBoard3> {
                                 Image.asset('assets/images/bigLine.png'),
                               ],
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                            const SizedBox(height: 5),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -304,9 +281,7 @@ class _OnBoard3State extends State<OnBoard3> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 5,
-              ),
+              const SizedBox(height: 5),
               Row(
                 children: [
                   const Padding(padding: EdgeInsets.only(left: 30)),
@@ -335,11 +310,8 @@ class _OnBoard3State extends State<OnBoard3> {
                         bottom: 0,
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SignIn()),
-                            );
+                            // Use GetX for navigation
+                            Get.to(() => const SignIn());
                           },
                           child: const Icon(
                             Icons.arrow_forward,

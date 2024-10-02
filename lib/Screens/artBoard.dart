@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfinalproject/Screens/onBoard1.dart';
+import 'package:get/get.dart';
 
 class ArtBoard extends StatelessWidget {
   const ArtBoard({super.key});
@@ -58,30 +59,21 @@ class ArtBoard extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    const SizedBox(
-                      height: 10,
-                    ),
-
+                    const SizedBox(height: 10),
                     Row(
                       children: [
                         const Padding(padding: EdgeInsets.only(left: 160)),
-                        Image.asset('assets/images/slider.png')
+                        Image.asset('assets/images/slider.png'),
                       ],
                     ),
-
-                    const SizedBox(
-                      height: 30,
-                    ),
+                    const SizedBox(height: 30),
                     Row(
                       children: [
                         const Padding(padding: EdgeInsets.only(left: 80)),
-                        Image.asset('assets/images/Taskcy.png')
+                        Image.asset('assets/images/Taskcy.png'),
                       ],
                     ),
-
-                    const SizedBox(
-                      height: 10,
-                    ),
+                    const SizedBox(height: 10),
                     const Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 60)),
@@ -94,10 +86,6 @@ class ArtBoard extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    // SizedBox(
-                    //   height: 10,
-                    // ),
                     const Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 90)),
@@ -110,10 +98,7 @@ class ArtBoard extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    const SizedBox(
-                      height: 10,
-                    ),
+                    const SizedBox(height: 10),
                     const Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 60)),
@@ -126,10 +111,7 @@ class ArtBoard extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    const SizedBox(
-                      height: 5,
-                    ),
+                    const SizedBox(height: 5),
                     const Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 90)),
@@ -142,23 +124,15 @@ class ArtBoard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 15,
-                    ),
+                    const SizedBox(height: 15),
                     Row(
                       children: [
                         const Padding(
-                            padding: EdgeInsets.only(
-                          left: 45,
-                        )),
+                          padding: EdgeInsets.only(left: 45),
+                        ),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const OnBoard(),
-                                  ),
-                                );
+                            Get.to(() => const OnBoard()); // Use GetX for navigation
                           },
                           style: ElevatedButton.styleFrom(
                             elevation: 10,
@@ -182,7 +156,6 @@ class ArtBoard extends StatelessWidget {
                             ),
                             child: Container(
                               constraints: const BoxConstraints(
-                                // maxWidth: 200.0,
                                 minHeight: 50.0,
                               ),
                               alignment: Alignment.center,
@@ -203,7 +176,7 @@ class ArtBoard extends StatelessWidget {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class ChatView extends StatelessWidget {
   final ChatController controller = Get.put(ChatController());
 
-  const ChatView({super.key});
+   ChatView({super.key});
 
   @override
   Widget build(BuildContext context) {

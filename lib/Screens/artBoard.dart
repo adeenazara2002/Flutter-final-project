@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:flutterfinalproject/Screens/onBoard1.dart';
 
+// Controller for managing state (if needed)
+class ArtBoardController extends GetxController {
+  // Add any observables, if needed for dynamic data updates.
+}
+
 class ArtBoard extends StatelessWidget {
-  const ArtBoard({super.key});
+  // Instantiate the controller
+  final ArtBoardController controller = Get.put(ArtBoardController());
+
+  ArtBoard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +44,8 @@ class ArtBoard extends StatelessWidget {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.3,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(24)),
                   color: Colors.white,
                   border: Border.all(
                     color: Colors.white,
@@ -50,7 +60,8 @@ class ArtBoard extends StatelessWidget {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.5,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(24)),
                   color: Colors.white,
                   border: Border.all(
                     color: Colors.white,
@@ -58,31 +69,22 @@ class ArtBoard extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-
+                    const SizedBox(height: 10),
                     Row(
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 160)),
-                        Image.asset('assets/images/slider.png')
+                        const Padding(padding: EdgeInsets.only(left: 160)),
+                        Image.asset('assets/images/slider.png'),
                       ],
                     ),
-
-                    SizedBox(
-                      height: 30,
-                    ),
+                    const SizedBox(height: 30),
                     Row(
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 80)),
-                        Image.asset('assets/images/Taskcy.png')
+                        const Padding(padding: EdgeInsets.only(left: 80)),
+                        Image.asset('assets/images/Taskcy.png'),
                       ],
                     ),
-
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
+                    const SizedBox(height: 10),
+                    const Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 60)),
                         Text(
@@ -94,11 +96,7 @@ class ArtBoard extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    // SizedBox(
-                    //   height: 10,
-                    // ),
-                    Row(
+                    const Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 90)),
                         Text(
@@ -110,11 +108,8 @@ class ArtBoard extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
+                    const SizedBox(height: 10),
+                    const Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 60)),
                         Text(
@@ -126,11 +121,8 @@ class ArtBoard extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Row(
+                    const SizedBox(height: 5),
+                    const Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 90)),
                         Text(
@@ -142,27 +134,19 @@ class ArtBoard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
+                    const SizedBox(height: 15),
                     Row(
                       children: [
-                        Padding(
-                            padding: EdgeInsets.only(
-                          left: 45,
-                        )),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 45),
+                        ),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => OnBoard(),
-                                  ),
-                                );
+                            Get.to(() => const OnBoard()); // GetX navigation
                           },
                           style: ElevatedButton.styleFrom(
                             elevation: 10,
-                            shadowColor: Color.fromRGBO(139, 120, 255, 1)
+                            shadowColor: const Color.fromRGBO(139, 120, 255, 1)
                                 .withOpacity(0.8),
                             foregroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
@@ -172,7 +156,7 @@ class ArtBoard extends StatelessWidget {
                           ),
                           child: Ink(
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                 colors: [
                                   Color.fromRGBO(139, 120, 255, 1),
                                   Color.fromRGBO(84, 81, 214, 1),
@@ -181,13 +165,12 @@ class ArtBoard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Container(
-                              constraints: BoxConstraints(
-                                // maxWidth: 200.0,
+                              constraints: const BoxConstraints(
                                 minHeight: 50.0,
                               ),
                               alignment: Alignment.center,
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(
                                   horizontal: 80.0,
                                   vertical: 17.0,
                                 ),
@@ -203,7 +186,7 @@ class ArtBoard extends StatelessWidget {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),

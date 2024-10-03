@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfinalproject/Screens/onBoard2.dart';
 import 'package:flutterfinalproject/Screens/onBoard3.dart';
+import 'package:get/get.dart';
 
-class OnBoard2 extends StatefulWidget {
+class OnBoard2 extends StatelessWidget {
   const OnBoard2({super.key});
 
-  @override
-  State<OnBoard2> createState() => _OnBoard2State();
-}
-
-class _OnBoard2State extends State<OnBoard2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,37 +15,35 @@ class _OnBoard2State extends State<OnBoard2> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 80),
+              const SizedBox(height: 80),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 280)),
+                  const Padding(padding: EdgeInsets.only(left: 280)),
                   Image.asset('assets/images/yellowBall.png'),
                 ],
               ),
               Row(
                 children: [
-                  Spacer(flex: 1),
+                  const Spacer(flex: 1),
                   Image.asset('assets/images/pinkBall.png'),
                 ],
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 10)),
+                  const Padding(padding: EdgeInsets.only(left: 10)),
                   Image.asset('assets/images/lightBlueSmall.png'),
                 ],
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 210)),
+                  const Padding(padding: EdgeInsets.only(left: 210)),
                   Image.asset('assets/images/lightBlueBall.png'),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 290)),
+                  const Padding(padding: EdgeInsets.only(left: 290)),
                   Image.asset('assets/images/pinkBall.png'),
                 ],
               ),
@@ -59,7 +52,7 @@ class _OnBoard2State extends State<OnBoard2> {
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: [
-                    Positioned(
+                    const Positioned(
                       top: 50,
                       left: 60,
                       child: CircleAvatar(
@@ -75,7 +68,7 @@ class _OnBoard2State extends State<OnBoard2> {
                         height: 60,
                         width: 180,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             colors: [
                               Color.fromRGBO(153, 153, 153, 0.25),
                               Color.fromRGBO(202, 202, 202, 0.25),
@@ -83,16 +76,17 @@ class _OnBoard2State extends State<OnBoard2> {
                           ),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                            color: Color.fromRGBO(202, 202, 202, 0.25),
+                            color: const Color.fromRGBO(202, 202, 202, 0.25),
                           ),
                         ),
                         child: Column(
                           children: [
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Row(
                               children: [
-                                Padding(padding: EdgeInsets.only(left: 10)),
-                                CircleAvatar(
+                                const Padding(
+                                    padding: EdgeInsets.only(left: 10)),
+                                const CircleAvatar(
                                   backgroundImage:
                                       AssetImage('assets/images/redHead.png'),
                                   radius: 20,
@@ -103,7 +97,7 @@ class _OnBoard2State extends State<OnBoard2> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                SizedBox(width: 60),
+                                const SizedBox(width: 60),
                                 Image.asset('assets/images/smallLine.png'),
                               ],
                             ),
@@ -118,7 +112,7 @@ class _OnBoard2State extends State<OnBoard2> {
                         height: 60,
                         width: 180,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             colors: [
                               Color.fromRGBO(153, 153, 153, 0.25),
                               Color.fromRGBO(202, 202, 202, 0.25),
@@ -126,16 +120,17 @@ class _OnBoard2State extends State<OnBoard2> {
                           ),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                            color: Color.fromRGBO(202, 202, 202, 0.25),
+                            color: const Color.fromRGBO(202, 202, 202, 0.25),
                           ),
                         ),
                         child: Column(
                           children: [
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Row(
                               children: [
-                                Padding(padding: EdgeInsets.only(left: 10)),
-                                CircleAvatar(
+                                const Padding(
+                                    padding: EdgeInsets.only(left: 10)),
+                                const CircleAvatar(
                                   backgroundImage:
                                       AssetImage('assets/images/uncle.png'),
                                   radius: 20,
@@ -146,7 +141,7 @@ class _OnBoard2State extends State<OnBoard2> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                SizedBox(width: 60),
+                                const SizedBox(width: 60),
                                 Image.asset('assets/images/smallLine.png'),
                               ],
                             ),
@@ -162,8 +157,8 @@ class _OnBoard2State extends State<OnBoard2> {
                   Image.asset('assets/images/yellowBigBall.png'),
                 ],
               ),
-              SizedBox(height: 10),
-              Row(
+              const SizedBox(height: 10),
+              const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
                   Text(
@@ -175,7 +170,7 @@ class _OnBoard2State extends State<OnBoard2> {
                   ),
                 ],
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
                   Text(
@@ -187,7 +182,7 @@ class _OnBoard2State extends State<OnBoard2> {
                   ),
                 ],
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
                   Text(
@@ -207,11 +202,11 @@ class _OnBoard2State extends State<OnBoard2> {
                   ),
                 ],
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 30)),
                   Text(
-                    'Oragnized',
+                    'Organized',
                     style: TextStyle(
                         color: Color.fromRGBO(0, 32, 85, 1),
                         fontSize: 35,
@@ -219,19 +214,17 @@ class _OnBoard2State extends State<OnBoard2> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 5,
-              ),
+              const SizedBox(height: 5),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 30)),
+                  const Padding(padding: EdgeInsets.only(left: 30)),
                   Image.asset('assets/images/Sliedbar.png'),
                 ],
               ),
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 40)),
-                  Text(
+                  const Padding(padding: EdgeInsets.only(left: 40)),
+                  const Text(
                     'Skip',
                     style: TextStyle(
                       color: Color.fromRGBO(0, 32, 85, 1),
@@ -239,7 +232,7 @@ class _OnBoard2State extends State<OnBoard2> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Stack(
                     children: [
                       Image.asset('assets/images/rectangle.png'),
@@ -250,13 +243,10 @@ class _OnBoard2State extends State<OnBoard2> {
                         bottom: 0,
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => OnBoard3()),
-                            );
+                            Get.to(() =>
+                                const OnBoard3()); // Using GetX for navigation
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_forward,
                             color: Colors.white,
                             size: 24,

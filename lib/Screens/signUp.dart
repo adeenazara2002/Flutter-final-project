@@ -3,96 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutterfinalproject/Screens/Signin.dart';
 import 'package:flutterfinalproject/Screens/signUp.dart';
 import 'package:flutterfinalproject/Services/firebaseFunctions.dart';
+import 'package:flutterfinalproject/controllers/signup_controller.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class SignUp extends StatefulWidget {
+class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
   @override
-  State<SignUp> createState() => _SignUpState();
-}
-
-class _SignUpState extends State<SignUp> {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  bool _passwordVisible = false;
-
-  // Firebase instance
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-
-  void _SignUp() async {
-    String name = _nameController.text;
-    String email = _emailController.text;
-    String password = _passwordController.text;
-
-    // Name validation: only letters and spaces
-    if (name.isEmpty || !RegExp(r'^[a-zA-Z\s]+$').hasMatch(name)) {
-      _showErrorDialog("Please enter a valid name (letters and spaces only).");
-      return;
-    }
-
-    // Email validation: must end with '@gmail.com'
-    if (email.isEmpty ||
-        !RegExp(r'^[a-zA-Z0-9._%+-]+@gmail\.com$').hasMatch(email)) {
-      _showErrorDialog("Please enter a valid Gmail address.");
-      return;
-    }
-
-    // Password validation: at least 8 characters, including uppercase, lowercase, numbers, and special characters
-    if (password.isEmpty ||
-        password.length < 8 ||
-        !RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).+$')
-            .hasMatch(password)) {
-      _showErrorDialog(
-          "Password must be at least 8 characters long and include uppercase, lowercase, numbers, and special characters.");
-      return;
-    }
-
-    try {
-      // Create user with email and password
-      UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-
-      // Clear the fields after signup
-      _nameController.clear();
-      _emailController.clear();
-      _passwordController.clear();
-
-      // Navigate to SignIn screen
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => SignIn()),
-      );
-    } catch (e) {
-      print(e);
-      _showErrorDialog("Sign up failed. Please try again.");
-    }
-  }
-
-// Function to show error dialogs
-  void _showErrorDialog(String message) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text("Error"),
-          content: Text(message),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text("OK"),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final SignUpController signUpController = Get.put(SignUpController());
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -191,7 +111,6 @@ class _SignUpState extends State<SignUp> {
               Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 20)),
-                  // container 2
                   Container(
                     height: 60,
                     width: 310,
@@ -202,7 +121,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     child: TextField(
-                      controller: _nameController,
+                      controller: signUpController.nameController,
                       decoration: InputDecoration(
                         hintText: 'Albert Ainstain',
                         hintStyle: TextStyle(
@@ -219,7 +138,7 @@ class _SignUpState extends State<SignUp> {
                         color: Color.fromRGBO(0, 32, 85, 1),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
               SizedBox(
@@ -228,7 +147,6 @@ class _SignUpState extends State<SignUp> {
               Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 20)),
-                  // container 2
                   Container(
                     height: 60,
                     width: 310,
@@ -239,7 +157,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     child: TextField(
-                      controller: _emailController,
+                      controller: signUpController.emailController,
                       decoration: InputDecoration(
                         hintText: 'Enter your mail',
                         hintStyle: TextStyle(
@@ -256,7 +174,7 @@ class _SignUpState extends State<SignUp> {
                         color: Color.fromRGBO(134, 141, 149, 1),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
               SizedBox(
@@ -265,7 +183,6 @@ class _SignUpState extends State<SignUp> {
               Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 20)),
-                  // container 2
                   Container(
                     height: 60,
                     width: 310,
@@ -276,7 +193,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     child: TextField(
-                      controller: _passwordController,
+                      controller: signUpController.passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: 'Enter your password',
@@ -294,7 +211,7 @@ class _SignUpState extends State<SignUp> {
                         color: Color.fromRGBO(134, 141, 149, 1),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
               SizedBox(
@@ -304,7 +221,10 @@ class _SignUpState extends State<SignUp> {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 27)),
                   ElevatedButton(
-                    onPressed: _SignUp,
+                    onPressed: () {
+                      signUpController
+                          .signUp(); // Call the signUp method from controller
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromRGBO(117, 110, 243, 1),
                       foregroundColor: Colors.white,
@@ -366,12 +286,9 @@ class _SignUpState extends State<SignUp> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignIn()),
-                      );
+                  TextButton(
+                    onPressed: () {
+                      Get.to(() => SignIn());
                     },
                     child: Text(
                       'Sign In ',

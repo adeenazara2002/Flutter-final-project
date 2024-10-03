@@ -1,47 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterfinalproject/Screens/settings.dart';
 import 'package:flutterfinalproject/Screens/signUp.dart';
+import 'package:flutterfinalproject/controllers/sign_in_controller.dart';
+import 'package:get/get.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
-
-  @override
-  State<SignIn> createState() => _SignInState();
-}
-
-class _SignInState extends State<SignIn> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  bool _passwordVisible = false;
-
-  // Firebase instance
-
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-
-  void _signIn() async {
-    if (_formKey.currentState!.validate()) {
-      try {
-        // Sign in with email and password
-        await _auth.signInWithEmailAndPassword(
-          email: _emailController.text,
-          password: _passwordController.text,
-        );
-
-        // Navigate to Home screen
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => Settings()),
-        );
-      } catch (e) {
-        // Show error message if sign in fails
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Sign-in failed: ${e.toString()}')),
-        );
-      }
-    }
-  }
+class SignIn extends StatelessWidget {
+  final SignInController controller = Get.put(SignInController());
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +15,7 @@ class _SignInState extends State<SignIn> {
       color: Colors.white,
       child: SingleChildScrollView(
         child: Form(
-          key: _formKey,
+          key: controller.formKey, // Use controller here
           child: Column(
             children: [
               SizedBox(height: 80),
@@ -68,9 +31,10 @@ class _SignInState extends State<SignIn> {
                   Text(
                     'Sign In',
                     style: TextStyle(
-                        color: Color.fromRGBO(0, 32, 85, 1),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500),
+                      color: Color.fromRGBO(0, 32, 85, 1),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ],
               ),
@@ -142,51 +106,35 @@ class _SignInState extends State<SignIn> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
-                  controller: _emailController,
+                  controller: controller.emailController, // Use controller here
                   decoration: InputDecoration(
                     labelText: 'Email',
-                    hintText: 'albart.ainstain@gmail.com',
-                    // Border when the field is not focused (pink color)
+                    hintText: 'albert.einstein@gmail.com',
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide(
-                        color: Color.fromRGBO(233, 241, 255, 1),
+                        color: Color.fromRGBO(
+                            233, 241, 255, 1), // Border color when not focused
                         width: 2.0,
                       ),
                     ),
-                    // Border when the field is focused (blue color)
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide(
-                        color: Color.fromRGBO(233, 241, 255, 1),
+                        color: Color.fromRGBO(233, 241, 255,
+                            1), // Border color when the field is focused
                         width: 2.0,
                       ),
                     ),
-                    // Error border (optional)
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide(
-                        // color: Colors.red, // Red color when there is an error
+                        // color: Colors.red, // Border color when there's an error
                         width: 2.0,
                       ),
                     ),
-                    labelStyle: TextStyle(
-                        color: Color.fromRGBO(134, 141, 149, 1),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    hintStyle: TextStyle(
-                        color: Color.fromRGBO(134, 141, 149, 1),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Email is required';
-                    } else if (!RegExp(r'^[^@]+@gmail\.com$').hasMatch(value)) {
-                      return 'Please enter a valid Gmail address';
-                    }
-                    return null;
-                  },
+                  validator: (value) => controller.validateEmail(value!),
                 ),
               ),
 
@@ -194,62 +142,43 @@ class _SignInState extends State<SignIn> {
               // Password field
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: TextFormField(
-                  controller: _passwordController,
-                  obscureText: !_passwordVisible,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    hintText: 'Enter your password',
-                    enabledBorder: OutlineInputBorder(
+                child: Obx(
+                  () => TextFormField(
+                    controller: controller.passwordController,
+                    obscureText: !controller.passwordVisible.value,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      hintText: 'Enter your password',
+                      enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                         borderSide: BorderSide(
-                          color: Color.fromRGBO(233, 241, 255, 1),
-                          width: 2.0, // You can adjust the width if needed
-                        )),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
-                        color: Color.fromRGBO(233, 241, 255, 1),
-                        width: 2.0, // You can adjust the width if needed
+                          color: Color.fromRGBO(233, 241, 255,
+                              1), // Border color when not focused
+                          width: 2.0,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(
+                          color: Color.fromRGBO(233, 241, 255,
+                              1), // Border color when the field is focused
+                          width: 2.0,
+                        ),
+                      ),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          controller.passwordVisible.value
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                        ),
+                        onPressed: () {
+                          controller.passwordVisible
+                              .toggle(); // Toggle password visibility
+                        },
                       ),
                     ),
-                    labelStyle: TextStyle(
-                        color: Color.fromRGBO(134, 141, 149, 1),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    hintStyle: TextStyle(
-                        color: Color.fromRGBO(134, 141, 149, 1),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    // Optional: Customize the focused border (when the user taps the field)
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
-                        color: Color.fromRGBO(233, 241, 255, 1),
-                        width: 2.0,
-                      ),
-                    ),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        _passwordVisible
-                            ? Icons.visibility
-                            : Icons.visibility_off,
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          _passwordVisible = !_passwordVisible;
-                        });
-                      },
-                    ),
+                    validator: (value) => controller.validatePassword(value!),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Password is required';
-                    } else if (value.length < 8) {
-                      return 'Password must be at least 8 characters long';
-                    }
-                    return null;
-                  },
                 ),
               ),
 
@@ -271,21 +200,27 @@ class _SignInState extends State<SignIn> {
               SizedBox(height: 30),
               // Sign In button
               ElevatedButton(
-                onPressed: _signIn,
+                onPressed: () {
+                  controller.signIn(); // Call signIn method from controller
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromRGBO(117, 110, 243, 1),
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 95.0, vertical: 16.0),
+                    horizontal: 95.0,
+                    vertical: 16.0,
+                  ),
                   child: Text(
                     'Sign In',
-                    style:
-                        TextStyle(fontSize: 17.0, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),
@@ -328,12 +263,9 @@ class _SignInState extends State<SignIn> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignUp()),
-                      );
+                  TextButton(
+                    onPressed: () {
+                      Get.to(() => SignUp());
                     },
                     child: Text(
                       'Sign Up ',

@@ -1,0 +1,19 @@
+import 'package:get/get.dart';
+
+class SideMenuController extends GetxController {
+  // This can be dynamic data retrieved from a database or Firebase in the future
+  var username = 'Alvart Ainstain'.obs;
+  var userHandle = '@albart.ainstain'.obs;
+  
+  // Example data for workspace and team info
+  var workspaceName = 'UI Design'.obs;
+  var teamCount = 8.obs;
+  var taskCount = 8.obs;
+  var labelCount = 13.obs;
+  var memberCount = 13.obs;
+
+  void logout() {
+    // Handle the logout functionality
+    print('User Logged Out');
+  }
+}
